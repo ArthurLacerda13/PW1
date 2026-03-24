@@ -1,10 +1,10 @@
 "use strict";
 class Company {
-    constructor(name, founded, industry, king = "Internet Company") {
+    constructor(name, founded, industry, kind = "Internet Company") {
         this.name = name;
         this.founded = founded;
         this.industry = industry;
-        this.king = king;
+        this.kind = kind;
     }
     toString() {
         return `${(this.name).padEnd(15, ".")} ${(this.founded)}`;

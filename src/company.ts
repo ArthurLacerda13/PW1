@@ -3,7 +3,7 @@ class Company {
         private name: string, 
         private founded: number, 
         private industry: string, 
-        private king: string = "Internet Company"
+        private kind: string = "Internet Company"
     ) {
     }
     public toString(): string {
