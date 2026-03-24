@@ -16,9 +16,9 @@ class Answer {
 exports.Answer = Answer;
 class Exam {
     constructor(weight, answer) {
-        this.answers = []; // respostas dos alunos
-        this.answer = answer;
         this.weight = weight;
+        this.answer = answer;
+        this.answers = [];
     }
     add(answers) {
         this.answers.push(answers);

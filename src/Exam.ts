@@ -1,14 +1,9 @@
 export class Weight { 
-    constructor(
-        public pesos: number[]
-    ) {}
+    constructor(public pesos: number[]) {}
  }
 
 export class Answer { 
-    constructor(
-        public estudante: string,
-        public respostas: string[]
-    ) {}
+    constructor(public estudante: string, public respostas: string[]) {}
 }
 
 class Exam { 
@@ -63,7 +58,7 @@ class Exam {
     }
     todasAsNotas.sort((a, b) => b - a);
     const resultado: number[] = [];
-    
+
     for (let i = 0; i < count && i < todasAsNotas.length; i++) {
         resultado.push(todasAsNotas[i]);
     }
