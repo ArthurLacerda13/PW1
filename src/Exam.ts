@@ -29,29 +29,29 @@ class Exam {
     
     public avg(): number {
     let totalPontos = 0;
-    for (const estudante of this.answers) {
-        totalPontos += this.calcularNota(estudante);
-    }
     if (this.answers.length === 0) {
         return 0;
+    }
+    for (const estudante of this.answers) {
+        totalPontos += this.calcularNota(estudante);
     }
     return totalPontos / this.answers.length;
     }
 
-    public min(count: number = 1): number[] {
+    public min(limite: number): number[] {
     const todasAsNotas: number[] = [];
     for (const estudante of this.answers) {
         todasAsNotas.push(this.calcularNota(estudante));
     }
     todasAsNotas.sort((a, b) => a - b);
     const resultado: number[] = [];
-    for (let i = 0; i < count && i < todasAsNotas.length; i++) {
+    for (let i = 0; i < limite && i < todasAsNotas.length; i++) {
         resultado.push(todasAsNotas[i]);
     }
     return resultado;
     }
 
-    public max(count: number = 1): number[] {
+    public max(qtd: number): number[] {
     const todasAsNotas: number[] = [];
     for (const estudante of this.answers) {
         todasAsNotas.push(this.calcularNota(estudante));
@@ -59,30 +59,30 @@ class Exam {
     todasAsNotas.sort((a, b) => b - a);
     const resultado: number[] = [];
 
-    for (let i = 0; i < count && i < todasAsNotas.length; i++) {
+    for (let i = 0; i < qtd && i < todasAsNotas.length; i++) {
         resultado.push(todasAsNotas[i]);
     }
     return resultado;
     }
 
-    public lt(limit: number): number[] {
+    public lt(limite: number): number[] {
         const resultado: number[] = [];
 
-        for (const e of this.answers) {
-            const nota = this.calcularNota(e);
-            if (nota < limit) resultado.push(nota);
+        for (const estudante of this.answers) {
+            const nota = this.calcularNota(estudante);
+            if (nota < limite) resultado.push(nota);
         }
 
         return resultado;
     }
 
 
-    public gt(limit: number): number[] {
+    public gt(limite: number): number[] {
         const resultado: number[] = [];
 
-        for (const aluno of this.answers){
-            const nota = this.calcularNota(aluno);
-            if (nota > limit) resultado.push(nota);
+        for (const estudante of this.answers){
+            const nota = this.calcularNota(estudante);
+            if (nota > limite) resultado.push(nota);
         }
 
         return resultado;
